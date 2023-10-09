@@ -2,6 +2,7 @@
 
 import { useSession } from "next-auth/react"
 import GameInterface from "./GameInterface"
+import AuthLoading from "./AuthLoading"
 
 export default function Game({db}: any) {
  
@@ -11,9 +12,17 @@ export default function Game({db}: any) {
   const userInDB = filterableDB.filter((user:any) => session?.user?.email === user.email)
   const initFunds = userInDB[0]?.funds
 
-  return (
-      <div className="flex justify-center items-center h-screen w-screen">
-        <GameInterface initFunds={initFunds} user={userInDB[0]}/>
-      </div>
+  if(!initFunds){
+    return(
+        <div className="flex justify-center items-center h-screen w-screen">
+            <AuthLoading />
+        </div>
     )
+  }else{
+    return (
+        <div className="flex justify-center items-center h-screen w-screen">
+          <GameInterface initFunds={initFunds} user={userInDB[0]}/>
+        </div>
+      )
+  }
 }

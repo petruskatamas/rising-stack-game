@@ -2,7 +2,7 @@
 
 import { signOut, useSession } from "next-auth/react";
 import { useRouter as useNavRouter} from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 export default function UserInfo() {
 
@@ -87,7 +87,6 @@ export default function UserInfo() {
               Log Out
             </button>
             </div>
-
           }
         </div>
     );
