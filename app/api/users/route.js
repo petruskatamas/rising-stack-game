@@ -9,9 +9,10 @@ export async function GET() {
 }
 
 export async function PUT(request, { params }) {
-    const { id } = params
+    console.log(request,params)
+    const { id }  = params
     const { newFunds: funds } = await request.json()
     await connectMongoDB()
-    await User.findByIdAndUpdate(id, { funds })
+    await User.findOneAndUpdate({"_id": id }, { "funds": funds })
     return NextResponse.json({message:"Funds updtaed"}, {status:200})
 }

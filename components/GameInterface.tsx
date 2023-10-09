@@ -64,8 +64,8 @@ export default function GameInterface({initFunds, user}: any) {
   
   return (
         <div className="shadow-lg px-8 py-4 flex flex-col justify-between items-center gap-5 bg-white">
-          <div className="flex flex-row justify-between items-center">
-              <span>Funds : {newFunds}</span>
+          <div className="flex flex-col gap-5 md:flex-row justify-between items-center">
+              <span>Funds : ${newFunds}</span>
               <input
               onChange={(e) => {
                 setBet(e.target.value)
