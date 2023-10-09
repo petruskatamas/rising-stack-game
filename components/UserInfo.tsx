@@ -21,7 +21,7 @@ export default function UserInfo() {
               onClick={() => {
                 navRouter.push("/leaderboard")
               }}
-              className="bg-slate-400 text-white font-bold px-4 py-1 rounded"
+              className="bg-slate-400 text-white font-bold px-4 py-1 rounded hover:animate-pulse animate-infinite animate-ease-in-out"
             >
               Leaderboard
             </button>
@@ -29,13 +29,13 @@ export default function UserInfo() {
               onClick={() => {
                 navRouter.push("/dashboard")
               }}
-              className="bg-slate-400 text-white font-bold px-4 py-1 rounded"
+              className="bg-slate-400 text-white font-bold px-4 py-1 rounded hover:animate-pulse animate-infinite animate-ease-in-out"
             >
               Dashboard
             </button>
             <button
               onClick={() => signOut()}
-              className="bg-red-500 text-white font-bold px-4 py-1 rounded"
+              className="bg-red-500 text-white font-bold px-4 py-1 rounded hover:animate-pulse animate-infinite animate-ease-in-out"
             >
               Log Out
             </button>
@@ -63,12 +63,12 @@ export default function UserInfo() {
           {
             isOpen && 
 
-            <div className="absolute top-12 right-0 shadow-lg px-8 py-4 flex flex-col justify-between items-center gap-5 bg-white">
+            <div className="absolute top-12 right-4 shadow-lg px-8 py-4 flex flex-col justify-between items-center gap-5 bg-white">
               <button
               onClick={() => {
                 navRouter.push("/leaderboard")
               }}
-              className="bg-slate-400 text-white font-bold px-4 py-1 rounded w-full"
+              className="bg-slate-400 text-white font-bold px-4 py-1 rounded w-full hover:animate-pulse animate-infinite animate-ease-in-out"
             >
               Leaderboard
             </button>
@@ -76,13 +76,13 @@ export default function UserInfo() {
               onClick={() => {
                 navRouter.push("/dashboard")
               }}
-              className="bg-slate-400 text-white font-bold px-4 py-1 rounded w-full"
+              className="bg-slate-400 text-white font-bold px-4 py-1 rounded w-full hover:animate-pulse animate-infinite animate-ease-in-out"
             >
               Dashboard
             </button>
             <button
               onClick={() => signOut()}
-              className="bg-red-500 text-white font-bold px-4 py-1 rounded w-full"
+              className="bg-red-500 text-white font-bold px-4 py-1 rounded w-full hover:animate-pulse animate-infinite animate-ease-in-out"
             >
               Log Out
             </button>

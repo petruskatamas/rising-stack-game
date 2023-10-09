@@ -84,7 +84,7 @@ export default function GameInterface({initFunds, user}: any) {
               </div>
             )}
             <button
-              className="bg-green-500 text-white font-bold px-4 py-1 rounded"
+              className="bg-green-500 text-white font-bold px-4 py-1 rounded hover:animate-pulse animate-infinite animate-ease-in-out"
               onClick={() => {
                 handleGameLogic(parseInt(bet))
               }}

@@ -30,7 +30,7 @@ export default function Leaderboard() {
         <>
             <UserInfo />
             <div className="flex justify-center items-center h-screen w-screen">
-                <div className="shadow-lg px-8 py-4 flex flex-col justify-between items-center gap-5 bg-white w-[70%]">
+                <div className="shadow-lg px-8 py-4 flex flex-col justify-between items-center gap-5 bg-white w-[90%] md:w-[70%]">
                     <h1 className="font-bold text-2xl">Leaderboard</h1>
                     {sortedDB.map((user,index) => (
                     <div key={index} className="flex flex-row justify-between bg-slate-200 font-bold px-2 py-1 rounded w-full">
