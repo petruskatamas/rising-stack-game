@@ -20,7 +20,7 @@ export default function GameInterface({initFunds, user}: any) {
       initRender.current = false
     } else {
       console.log("fetch")
-      fetch(`api/users/${user._id}`,{
+      fetch(`api/users/?id=${user._id}`,{
         method: "PUT",
         headers : {
           "Content-type" : "application/json",
@@ -64,7 +64,7 @@ export default function GameInterface({initFunds, user}: any) {
   
   return (
         <div className="shadow-lg px-8 py-4 flex flex-col justify-between items-center gap-5 bg-white">
-          <div className="flex flex-col gap-5 md:flex-row justify-between items-center">
+          <div className="flex flex-col gap-5 md:flex-rowjustify-between items-center">
               <span>Funds : ${newFunds}</span>
               <input
               onChange={(e) => {
@@ -72,6 +72,7 @@ export default function GameInterface({initFunds, user}: any) {
                 console.log(bet)
               }}
               type="number"
+              min={0}
               placeholder="Your bet"
               className="border-b-2 border-gray-200 border-solid max-w-[35%]" 
               />

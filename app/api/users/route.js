@@ -1,4 +1,4 @@
-import { connectMongoDB } from "@/lib/mongodb";
+import connectMongoDB from "@/lib/mongodb";
 import User from "@/models/user";
 import { NextResponse } from "next/server";
 
@@ -8,11 +8,10 @@ export async function GET() {
     return NextResponse.json({users})
 }
 
-export async function PUT(request, { params }) {
-    console.log(request,params)
-    const { id }  = params
+export async function PUT(request) {
+    const id  = request.nextUrl.searchParams.get("id");
     const { newFunds: funds } = await request.json()
     await connectMongoDB()
-    await User.findOneAndUpdate({"_id": id }, { "funds": funds })
+    await User.findByIdAndUpdate(id , { funds })
     return NextResponse.json({message:"Funds updtaed"}, {status:200})
 }
